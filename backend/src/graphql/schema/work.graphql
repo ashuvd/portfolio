@@ -1,0 +1,18 @@
+scalar Upload
+
+type Query {
+    works: [Work!]!
+    work(id: ID!): Work!
+}
+type Mutation {
+    deleteWorkById(id: ID!): Work!
+    createWork(title: String!, description: String!, link: String!, file: Upload!): Work!
+    changeWorkById(id: ID!, title: String!, description: String!, link: String!, file: Upload): Work!
+}
+type Work {
+    id: Int!
+    title: String!
+    description: String!
+    link: String!
+    image: String!
+}

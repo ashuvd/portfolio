@@ -1,0 +1,39 @@
+.page {
+  &__search {
+    margin-bottom: 30px;
+  }
+  &__table {
+    margin-bottom: 30px;
+  }
+  &__pagination{
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__group {
+    position: relative;
+    margin-right: 20px;
+  }
+  &__select {
+    margin-right: 20px;
+  }
+}

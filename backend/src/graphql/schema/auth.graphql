@@ -1,0 +1,13 @@
+type Query {
+    refresh(accessToken: String!, refreshToken: String!): Auth!
+    login(login: String!, password: String!): Auth!
+    info: Info!
+}
+type Auth {
+    accessToken: String!
+    refreshToken: String!
+    user: User!
+}
+type Info {
+    user: User!
+}

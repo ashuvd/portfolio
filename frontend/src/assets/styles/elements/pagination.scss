@@ -1,0 +1,18 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  &__item {
+    cursor: pointer;
+    margin-right: 10px;
+    user-select: none;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .active {
+    color: $blue;
+  }
+  .disabled {
+    color: $gray;
+  }
+}

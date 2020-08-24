@@ -1,0 +1,15 @@
+type Query {
+    skills: [Skill!]!
+    skill(id: ID!): Skill!
+}
+type Mutation {
+    deleteSkillById(id: ID!): Skill!
+    createSkill(title: String!, percents: Int!, category: String!): Skill!
+    changeSkillById(title: String!, percents: Int!, category: String!, id: ID!): Skill!
+}
+type Skill {
+    id: ID!
+    title: String!
+    percents: Int!
+    category: String!
+}

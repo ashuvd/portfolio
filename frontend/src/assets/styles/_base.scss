@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  @include basic-font;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.46;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.container {
+  padding: 0 20px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+select{
+  @include basic-font;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.visually-hidden{
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+textarea {
+  outline: none;
+  height: 97px;
+}
+
+.blockScroll{
+  overflow: hidden;
+  height: 100vh;
+}
+.page {
+  height: 100%;
+}
+.flex-row {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.margin-bottom {
+  margin-bottom: 20px;
+}

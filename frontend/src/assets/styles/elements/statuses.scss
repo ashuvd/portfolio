@@ -1,0 +1,36 @@
+.status {
+  display: inline-block;
+  text-align: center;
+  color: $white;
+  font-weight: 500;
+  font-size: 11px;
+  min-width: 84px;
+  border-radius: 4px;
+  line-height: 1;
+  padding: 6px;
+  background-color: transparent;
+  &_green {
+    background-color: $green;
+  }
+  &_red {
+    background-color: $red;
+  }
+  &_yellow {
+    background-color: $yellow;
+  }
+  &_purple {
+    background-color: $purple;
+  }
+}
+
+small.invalid {
+  color: $red;
+}
+.invalid {
+  input {
+    border-color: $red;
+    &:focus {
+      border-color: $red;
+    }
+  }
+}

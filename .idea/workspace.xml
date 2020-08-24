@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="089919b0-6127-4964-a91d-e9ccaec3c40e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/frontend/src/components/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+        <option value="package.json" />
+        <option value="GraphQL File" />
+        <option value="TypeScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
+  </component>
+  <component name="ProjectId" id="1fuaD3BxArAEQwmdHRMlOabC96e" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="ts.external.directory.path" value="E:\works\portfolio\frontend\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\works\portfolio\backend\src\session" />
+      <recent name="E:\works\portfolio\frontend\src\utils" />
+      <recent name="E:\works\portfolio\frontend\src\assets\images\icons" />
+      <recent name="E:\works\portfolio\frontend\src\store\modules\works" />
+      <recent name="E:\works\portfolio\backend\src\work" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\works\portfolio\backend\public" />
+      <recent name="E:\works\portfolio\backend\src\skill" />
+      <recent name="E:\works\portfolio\frontend\src\graphql" />
+      <recent name="E:\works\portfolio\frontend\src\lib\materialize" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="089919b0-6127-4964-a91d-e9ccaec3c40e" name="Default Changelist" comment="" />
+      <created>1597070308288</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597070308288</updated>
+      <workItem from="1597070309366" duration="3425000" />
+      <workItem from="1597134022727" duration="22000" />
+      <workItem from="1597144942055" duration="12337000" />
+      <workItem from="1597302536697" duration="16792000" />
+      <workItem from="1597342692786" duration="91000" />
+      <workItem from="1597408590195" duration="11894000" />
+      <workItem from="1597655691516" duration="7836000" />
+      <workItem from="1597677093009" duration="5475000" />
+      <workItem from="1597766316186" duration="6606000" />
+      <workItem from="1597823489011" duration="7648000" />
+      <workItem from="1597857525194" duration="4481000" />
+      <workItem from="1597906873069" duration="4522000" />
+      <workItem from="1597911409174" duration="15343000" />
+      <workItem from="1597992518883" duration="10733000" />
+      <workItem from="1598003712040" duration="13000" />
+      <workItem from="1598006645938" duration="1073000" />
+      <workItem from="1598026976267" duration="4484000" />
+      <workItem from="1598077473048" duration="165000" />
+      <workItem from="1598269492573" duration="80000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TerminalProjectNonSharedOptionsProvider">
+    <option name="shellPath" value="C:\Program Files\Git\bin\bash.exe" />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597921814136">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1010" y="447" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1597921814136" />
+    <state x="1060" y="441" key="FileChooserDialogImpl" timestamp="1598077636380">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="441" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1598077636380" />
+    <state x="159" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1597677045300">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="159" y="0" key="FileDocumentManager.FileCacheConflict/0.0.2560.1400@0.0.2560.1400" timestamp="1597677045300" />
+    <state x="1028" y="342" key="SettingsEditor" timestamp="1598077481761">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1028" y="342" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1598077481761" />
+    <state x="988" y="437" width="583" height="526" key="find.popup" timestamp="1597926219264">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="988" y="437" width="583" height="526" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1597926219264" />
+  </component>
+</project>

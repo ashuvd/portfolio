@@ -1,0 +1,22 @@
+.messages{
+  position: fixed;
+  z-index: 99999;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+}
+.message{
+  background-color: rgba($green, 0.8);
+  border-radius: 5px;
+  padding: 20px;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 5px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  &.error{
+    background-color: rgba($red, 0.8);
+  }
+}

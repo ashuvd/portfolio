@@ -1,0 +1,38 @@
+.card {
+  position: relative;
+  border: 2px solid $green;
+  border-radius: 5px;
+  width: 500px;
+  height: 600px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  &__pic {
+    width: 100%;
+    height: 400px;
+    margin-bottom: auto;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  &__title {
+    margin: 0 20px;
+    padding: 20px 0;
+    border-bottom: 2px dashed $black-table;
+  }
+  &__desc {
+    margin: 0 20px;
+    padding: 20px 0;
+    border-bottom: 2px dashed $black-table;
+  }
+  &__link {
+    display: block;
+    padding: 20px;
+    color: $green;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
