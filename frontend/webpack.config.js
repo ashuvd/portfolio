@@ -3,8 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SpritePlugin = require('svg-sprite-loader/plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const dotenv = require('dotenv');
+const webpack = require('webpack');
 
 const isProd = process.env.NODE_ENV === 'production';
+const isDev = !isProd;
+
+dotenv.config({
+  path: isDev ? path.join(__dirname, 'dev.env') : path.join(__dirname, 'prod.env')
+})
+
+
 const config = {
   devtool: 'cheap-module-eval-source-map',
   sourceMap: true
@@ -13,13 +22,12 @@ if (isProd) {
   config.devtool = '';
   config.sourceMap = false;
 }
-console.log(config)
 module.exports = {
   entry: {
     main: path.resolve(__dirname, 'src/main.ts')
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../backend/public'),
     filename: '[name].[hash].bundle.js',
     publicPath: '/'
   },
@@ -104,7 +112,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     overlay: true,
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, '../backend/public'),
     port: 9000,
     proxy: {
       // '/api': {
@@ -132,5 +140,10 @@ module.exports = {
       template: path.resolve(__dirname, 'src/index.html')
     }),
     new SpritePlugin({ plainSprite: true }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(dotenv.config({
+        path: isDev ? path.join(__dirname, 'dev.env') : path.join(__dirname, 'prod.env')
+      }).parsed)
+    }),
   ]
 };

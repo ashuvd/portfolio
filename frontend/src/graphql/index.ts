@@ -21,7 +21,7 @@ const cache = new InMemoryCache();
 // });
 Vue.use(VueApollo);
 const httpOptions = {
-  uri: 'http://localhost:3000/graphql'
+  uri: process.env.BASE_URL
 }
 const httpLink = ApolloLink.split(
   operation => operation.getContext().hasUpload,

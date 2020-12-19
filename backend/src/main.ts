@@ -2,10 +2,11 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as path from "path";
 import * as express from 'express';
+import config from './config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(express.static(path.join(__dirname, '..', 'public')));
-  await app.listen(3000);
+  await app.listen(config.port);
 }
 bootstrap();
