@@ -31,10 +31,11 @@ export class WorkResolver {
   }
   @UseGuards(GqlAuthGuard)
   @Mutation(returns => Work)
-  async createWork(@Args('title') title: string, @Args('description') description: string, @Args('link') link: string, @Args({ name: 'file', type: () => GraphQLUpload }) upload: FileUpload): Promise<Work> {
-    const fileName = uuid()+upload.filename;
-    const file = await new Promise(async (resolve, reject) => {
-      return upload.createReadStream()
+  async createWork(@Args('title') title: string, @Args('description') description: string, @Args('link') link: string, @Args({ name: 'file', type: () => GraphQLUpload }) upload: any): Promise<Work> {
+    const file = await upload.promise;
+    const fileName = uuid()+file.filename;
+    await new Promise(async (resolve, reject) => {
+      return file.createReadStream()
         .pipe(createWriteStream(`./public/upload/${fileName}`))
         .on('finish', () => resolve(true))
         .on('error', () => reject(false))
@@ -43,17 +44,18 @@ export class WorkResolver {
   }
   @UseGuards(GqlAuthGuard)
   @Mutation(returns => Work)
-  async changeWorkById(@Args('id') id: number, @Args('title') title: string, @Args('description') description: string, @Args('link') link: string, @Args({ name: 'file', type: () => GraphQLUpload }) upload: FileUpload): Promise<Work> {
+  async changeWorkById(@Args('id') id: number, @Args('title') title: string, @Args('description') description: string, @Args('link') link: string, @Args({ name: 'file', type: () => GraphQLUpload }) upload: any): Promise<Work> {
     const work = await this.workRepository.findByPk(id);
     if (!work) {
       throw new BadRequestException('Работа не найдена');
     }
-    if (!upload) {
+    const file = await upload.promise;
+    if (!file || !file.filename) {
       return work.update({title, description, link});
     }
-    const fileName = uuid()+upload.filename;
+    const fileName = uuid()+file.filename;
     await new Promise(async (resolve, reject) => {
-      return upload.createReadStream()
+      return file.createReadStream()
         .pipe(createWriteStream(`./public/upload/${fileName}`))
         .on('finish', () => resolve(true))
         .on('error', () => reject(false))

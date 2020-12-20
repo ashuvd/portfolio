@@ -8,7 +8,7 @@ import { UserModule } from './user/user.module';
 import { SkillModule } from './skill/skill.module';
 import { WorkModule } from './work/work.module';
 import { AuthModule } from './auth/auth.module';
-import { GraphQLUpload } from 'apollo-server-express';
+// import { GraphQLUpload } from 'graphql-upload';
 
 @Module({
   imports: [
@@ -27,6 +27,7 @@ import { GraphQLUpload } from 'apollo-server-express';
         path: join(process.cwd(), 'src/graphql.ts'),
         // outputAs: 'class',
       },
+      uploads: false
       // schemaDirectives: {
       //   upper: UpperCaseDirective,
       // },
