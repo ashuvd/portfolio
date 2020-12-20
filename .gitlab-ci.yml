@@ -27,7 +27,7 @@ docker_build:
     - cat ~/docker_password.txt | docker login -u $DOCKER_USER --password-stdin
   script:
     - if [[ $(docker images -a | grep "$DOCKER_PROJECT" | awk '{print $3}') ]]; then docker images -a | grep "$DOCKER_PROJECT" | awk '{print $3}' | xargs docker rmi; fi
-    - docker build --build-arg DB_USER="${POSTGRESQL_DB_USER}" --build-arg DB_PASS="${POSTGRESQL_DB_PASSWORD}" --build-arg DB_HOST="${POSTGRESQL_DB_HOST}" --build-arg DB_PORT="${POSTGRESQL_DB_PORT}" --build-arg DB_NAME="${POSTGRESQL_DB_NAME}" --build-arg PORT="${PORT}" --build-arg HOST="${HOST}" -t $DOCKER_USER/$DOCKER_PROJECT:latest ./backend
+    - docker build --build-arg DB_USER="${POSTGRESQL_DB_USER}" --build-arg DB_PASS="${POSTGRESQL_DB_PASSWORD}" --build-arg DB_HOST="${POSTGRESQL_DB_HOST}" --build-arg DB_MIGRATE_HOST="${POSTGRESQL_DB_MIGRATE_HOST}" --build-arg DB_PORT="${POSTGRESQL_DB_PORT}" --build-arg DB_NAME="${POSTGRESQL_DB_NAME}" --build-arg PORT="${PORT}" --build-arg HOST="${HOST}" -t $DOCKER_USER/$DOCKER_PROJECT:latest ./backend
     - docker push $DOCKER_USER/$DOCKER_PROJECT
   only:
     - master
