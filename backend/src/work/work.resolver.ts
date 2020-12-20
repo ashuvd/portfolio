@@ -33,6 +33,9 @@ export class WorkResolver {
   @UseGuards(GqlAuthGuard)
   @Mutation(returns => Work)
   async createWork(@Args('title') title: string, @Args('description') description: string, @Args('link') link: string, @Args({ name: 'file', type: () => GraphQLUpload }) upload: any): Promise<Work> {
+    if (!upload) {
+      throw new BadRequestException('Вы не загрузили изображение');
+    }
     const file = await upload.promise;
     const fileName = uuid()+file.filename;
     await new Promise(async (resolve, reject) => {
@@ -41,7 +44,6 @@ export class WorkResolver {
         .on('finish', () => resolve(true))
         .on('error', () => reject(false))
     })
-    console.log(file.filename)
     return this.workRepository.create({title, description, link, image: `\\upload\\${fileName}`});
   }
   @UseGuards(GqlAuthGuard)
@@ -51,10 +53,10 @@ export class WorkResolver {
     if (!work) {
       throw new BadRequestException('Работа не найдена');
     }
-    const file = await upload.promise;
-    if (!file || !file.filename) {
+    if (!upload) {
       return work.update({title, description, link});
     }
+    const file = await upload.promise;
     const fileName = uuid()+file.filename;
     await new Promise(async (resolve, reject) => {
       return file.createReadStream()
