@@ -22,6 +22,7 @@ ENV DB_NAME ${DB_NAME}
 ENV PORT ${PORT}
 ENV HOST ${HOST}
 
+RUN mkdir -p public/upload
 RUN npm install
 RUN npm run sequelize-cli -- --env=production db:migrate
 #RUN npm run sequelize-cli -- --env=production db:seed:all
