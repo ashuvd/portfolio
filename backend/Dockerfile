@@ -24,6 +24,7 @@ ENV HOST ${HOST}
 
 RUN npm install
 RUN npm run sequelize-cli -- db:migrate
+RUN npm run sequelize-cli -- db:seed
 RUN npm run build
 
 EXPOSE 3333
