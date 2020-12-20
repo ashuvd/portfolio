@@ -3,6 +3,7 @@ import {BadRequestException, Inject, UseGuards} from '@nestjs/common';
 import Work from '../models/Work';
 import { FileUpload, GraphQLUpload } from "graphql-upload";
 import { createWriteStream } from 'fs';
+import { join } from 'path';
 import { v4 as uuid } from 'uuid';
 import {GqlAuthGuard} from "../auth/jwt-auth.guard";
 
@@ -36,10 +37,11 @@ export class WorkResolver {
     const fileName = uuid()+file.filename;
     await new Promise(async (resolve, reject) => {
       return file.createReadStream()
-        .pipe(createWriteStream(`./public/upload/${fileName}`))
+        .pipe(createWriteStream(join(__dirname, '..', '..', 'public', 'upload', fileName)))
         .on('finish', () => resolve(true))
         .on('error', () => reject(false))
     })
+    console.log(file.filename)
     return this.workRepository.create({title, description, link, image: `\\upload\\${fileName}`});
   }
   @UseGuards(GqlAuthGuard)
@@ -56,7 +58,7 @@ export class WorkResolver {
     const fileName = uuid()+file.filename;
     await new Promise(async (resolve, reject) => {
       return file.createReadStream()
-        .pipe(createWriteStream(`./public/upload/${fileName}`))
+        .pipe(createWriteStream(join(__dirname, '..', '..', 'public', 'upload', fileName)))
         .on('finish', () => resolve(true))
         .on('error', () => reject(false))
     })
