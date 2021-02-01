@@ -40,12 +40,13 @@
 <script lang="ts">
 import {Vue, Component} from 'vue-property-decorator';
 import { ISelect } from "@/types";
+import Progress from "@/components/elements/Progress.vue";
 import CustomSelect from "@/components/elements/CustomSelect.vue";
 import InputForm from "@/components/elements/InputForm.vue";
 import { required } from "vuelidate/lib/validators";
 import { Action } from "vuex-class";
 @Component({
-  components: { InputForm, CustomSelect },
+  components: { InputForm, CustomSelect, Progress },
   validations: {
     title: { required },
     percents: { required },
@@ -77,7 +78,7 @@ export default class AddSkill extends Vue {
         this.$v.$touch();
         return;
       }
-      const ok = await this.addSkill({ title: this.title, percents: +this.percents, category: this.category });
+      const ok = await this.addSkill({ title: this.title, percents: this.percents, category: this.category });
       if (ok) {
         await this.$router.push('/skills');
       }
