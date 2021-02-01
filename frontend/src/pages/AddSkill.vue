@@ -18,24 +18,10 @@
               </small>
             </div>
           </InputForm>
-          <InputForm
-              v-model.trim="percents"
-              id="percents"
-              labelText="Процент освоения"
-              class="form__group"
-              :class="{
-          invalid: $v.percents.$dirty && !$v.percents.required,
-        }"
-          >
-            <div class="form__errors">
-              <small
-                  v-if="$v.percents.$dirty && !$v.percents.required"
-                  class="invalid"
-              >
-                Введите процент владения скилом
-              </small>
-            </div>
-          </InputForm>
+          <div class="form__group">
+            <p class="form__subtitle">Процент освоения</p>
+            <Progress v-model="percents" width="100%" />
+          </div>
           <div class="form__group">
             <CustomSelect
                 v-model="category"
