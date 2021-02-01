@@ -53,7 +53,7 @@ import { Action } from "vuex-class";
 })
 export default class AddSkill extends Vue {
   title: string = '';
-  percents: string = '';
+  percents: number = 0;
   category: string = 'Frontend';
   selectItems: ISelect<string>[] = [
     {
