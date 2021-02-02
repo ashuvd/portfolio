@@ -11,6 +11,7 @@ const state: IWorksState = {
     title: '',
     description: '',
     link: '',
+    githubLink: '',
     image: ''
   },
   works: []

@@ -16,6 +16,15 @@ export interface IWork {
   title: string;
   description: string;
   link: string;
+  githubLink: string;
+}
+export interface IServerWork {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  link: string;
+  github_link: string;
 }
 
 export interface ISkill {

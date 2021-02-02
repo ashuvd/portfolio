@@ -10,6 +10,7 @@
             <div class="card__title">{{work.title}}</div>
             <div class="card__desc">{{work.description}}</div>
             <a :href="work.link" target="_blank" class="card__link">{{work.link}}</a>
+            <a :href="work.githubLink" target="_blank" class="card__github-link">{{work.githubLink}}</a>
             <button v-if="userId" type="button" class="icon-button icon-button_delete" @click="deleteWork(work.id)" >
               <svg class="icon-button__img">
                 <use :xlink:href="`/sprite.svg#trash-alt`" />

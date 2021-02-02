@@ -39,7 +39,7 @@
           <InputForm
               v-model.trim="work.link"
               id="link"
-              labelText="Ссылка"
+              labelText="Ссылка на работу"
               class="form__group"
               :class="{
           invalid: $v.work.link.$dirty && !$v.work.link.required,
@@ -54,13 +54,31 @@
               </small>
             </div>
           </InputForm>
+          <InputForm
+              v-model.trim="work.githubLink"
+              id="github-link"
+              labelText="Ссылка на исходный код"
+              class="form__group"
+              :class="{
+          invalid: $v.work.githubLink.$dirty && !$v.work.githubLink.required,
+        }"
+          >
+            <div class="form__errors">
+              <small
+                  v-if="$v.work.githubLink.$dirty && !$v.work.githubLink.required"
+                  class="invalid"
+              >
+                Введите ссылку на исходный код
+              </small>
+            </div>
+          </InputForm>
           <div class="form__group center">
             <input id="file" type="file" class="form__input visually-hidden" @change="previewImage">
             <label for="file" class="form__label-file">
               <img class="form__img" :src="previewPath">
             </label>
           </div>
-          <button type="submit" class="form__button button" :disabled="$v.$invalid && ($v.work.title.$dirty || $v.work.description.$dirty || $v.work.link.$dirty)">Сохранить</button>
+          <button type="submit" class="form__button button" :disabled="$v.$invalid && ($v.work.title.$dirty || $v.work.description.$dirty || $v.work.link.$dirty || $v.work.githubLink.$dirty)">Сохранить</button>
         </form>
       </div>
     </div>
@@ -81,6 +99,7 @@ import {IWork} from "@/types";
       title: { required },
       description: { required },
       link: { required },
+      githubLink: { required }
     }
   },
 })
@@ -113,7 +132,7 @@ export default class EditWork extends Vue {
         this.$v.$touch();
         return;
       }
-      const ok = await this.updateWork( { updateWork: { title: this.work.title, description: this.work.description, link: this.work.link, file: this.file }, id: this.work.id });
+      const ok = await this.updateWork( { updateWork: { title: this.work.title, description: this.work.description, link: this.work.link, github_link: this.work.githubLink, file: this.file }, id: this.work.id });
       if (ok) {
         await this.$router.push('/works');
       }

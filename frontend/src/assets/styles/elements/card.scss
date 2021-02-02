@@ -31,6 +31,15 @@
     display: block;
     padding: 20px;
     color: $green;
+    border-bottom: 2px dashed $black-table;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__github-link {
+    display: block;
+    padding: 20px;
+    color: $green;
     &:hover {
       text-decoration: underline;
     }

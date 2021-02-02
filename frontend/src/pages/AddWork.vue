@@ -39,7 +39,7 @@
           <InputForm
               v-model.trim="link"
               id="link"
-              labelText="Ссылка"
+              labelText="Ссылка на работу"
               class="form__group"
               :class="{
           invalid: $v.link.$dirty && !$v.link.required,
@@ -54,13 +54,31 @@
               </small>
             </div>
           </InputForm>
+          <InputForm
+              v-model.trim="githubLink"
+              id="github-link"
+              labelText="Ссылка на исходный код"
+              class="form__group"
+              :class="{
+          invalid: $v.githubLink.$dirty && !$v.githubLink.required,
+        }"
+          >
+            <div class="form__errors">
+              <small
+                  v-if="$v.githubLink.$dirty && !$v.githubLink.required"
+                  class="invalid"
+              >
+                Введите ссылку на исходный код
+              </small>
+            </div>
+          </InputForm>
           <div class="form__group center">
             <input id="file" type="file" class="form__input visually-hidden" @change="previewImage">
             <label for="file" class="form__label-file">
               <img class="form__img" :src="previewPath">
             </label>
           </div>
-          <button type="submit" class="form__button button" :disabled="$v.$invalid && ($v.title.$dirty || $v.description.$dirty || $v.link.$dirty)">Добавить</button>
+          <button type="submit" class="form__button button" :disabled="$v.$invalid && ($v.title.$dirty || $v.description.$dirty || $v.link.$dirty || $v.githubLink.$dirty)">Добавить</button>
         </form>
       </div>
     </div>
@@ -79,12 +97,14 @@ import {Action} from "vuex-class";
     title: { required },
     description: { required },
     link: { required },
+    githubLink: { required }
   },
 })
 export default class AddWork extends Vue {
   title: string = '';
   description: string = '';
   link: string = '';
+  githubLink: string = '';
   file!: File;
   protected previewPath: string | ArrayBuffer | null = null;
   previewImage(event: Event) {
@@ -106,7 +126,7 @@ export default class AddWork extends Vue {
         this.$v.$touch();
         return;
       }
-      const ok = await this.addWork({ title: this.title, description: this.description, link: this.link, file: this.file });
+      const ok = await this.addWork({ title: this.title, description: this.description, link: this.link, github_link: this.githubLink, file: this.file });
       if (ok) {
         await this.$router.push('/works');
       }

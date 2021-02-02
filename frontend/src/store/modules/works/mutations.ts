@@ -1,13 +1,29 @@
 import { MutationTree } from 'vuex';
 import { IWorksState } from './types';
-import { IWork } from '@/types';
+import { IWork, IServerWork } from '@/types';
 
 export const mutations: MutationTree<IWorksState> = {
-  setWorks(state, works: IWork[]) {
-    state.works = [...works];
+  setWorks(state, works: IServerWork[]) {
+    state.works = works.map(work => {
+      return {
+        id: work.id,
+        image: work.image,
+        title: work.title,
+        description: work.description,
+        link: work.link,
+        githubLink: work.github_link
+      }
+    });
   },
-  setWork(state, work: IWork) {
-    state.work = work;
+  setWork(state, work: IServerWork) {
+    state.work = {
+      id: work.id,
+      image: work.image,
+      title: work.title,
+      description: work.description,
+      link: work.link,
+      githubLink: work.github_link
+    };
   },
   addNewWork(state, work: IWork) {
     state.works.push(work);

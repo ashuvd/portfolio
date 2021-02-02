@@ -35,4 +35,9 @@ export default class Work extends Model<Work> {
     allowNull: false
   })
   link: string
+
+  @Column({
+    type: DataType.STRING
+  })
+  github_link: string
 }
