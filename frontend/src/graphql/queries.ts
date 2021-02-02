@@ -55,6 +55,7 @@ export const worksQuery = gql`
             title,
             description,
             link,
+            github_link,
             image
         }
     }
@@ -78,6 +79,7 @@ export const workQuery = gql`
             title,
             description,
             link,
+            github_link,
             image
         }
     }
@@ -113,24 +115,26 @@ export const deleteSkillMutation = gql`
 `;
 
 export const createWorkMutation = gql`
-    mutation CreateWork($title: String!, $description: String!, $link: String!, $file: Upload!) {
-        createWork(title: $title, description: $description, link: $link, file: $file) {
+    mutation CreateWork($title: String!, $description: String!, $link: String!, $github_link: String!, $file: Upload!) {
+        createWork(title: $title, description: $description, link: $link, github_link: $github_link, file: $file) {
             id,
             title,
             description,
             link,
+            github_link,
             image
         }
     }
 `;
 
 export const changeWorkMutation = gql`
-    mutation ChangeWork($id: ID!, $title: String!, $description: String!, $link: String!, $file: Upload) {
-        changeWorkById(id: $id, title: $title, description: $description, link: $link, file: $file) {
+    mutation ChangeWork($id: ID!, $title: String!, $description: String!, $link: String!, $github_link: String!, $file: Upload) {
+        changeWorkById(id: $id, title: $title, description: $description, link: $link, github_link: $github_link, file: $file) {
             id,
             title,
             description,
             link,
+            github_link,
             image
         }
     }

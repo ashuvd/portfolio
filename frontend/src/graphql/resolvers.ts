@@ -23,6 +23,7 @@ export const typeDefs = gql`
         title: String!
         description: String!
         link: String!
+        github_link: String!
         image: String!
     }
 `;
